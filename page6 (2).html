@@ -1,0 +1,312 @@
+
+    
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blockchain Vooting System</title>
+    
+    <style>body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background-color: #f0f8ff;
+        color: #333;
+    }
+    
+    /* Navbar styles */
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+        background-color:blueviolet; /* Sky blue */
+        position: relative;
+    }
+    
+    .logo {
+        
+            font-size: 20px;
+            font-weight: bold;
+            margin-right: 20px;
+            border-radius: 50%;
+           
+    }
+    
+    .nav-links {
+        list-style: none;
+        display: flex;
+        gap: 20px;
+    }
+    
+    .nav-links li {
+        display: inline;
+    }
+    
+    .nav-item {
+        text-decoration: none;
+        color: #ffffff;
+        font-weight: bold;
+        padding: 5px 10px;
+        border-radius: 5px;
+        transition: background-color 0.3s;
+    }
+    
+    .nav-item:hover,
+    .nav-item.active {
+        background-color: #006994; /* Active state */
+    }
+    
+    .search-bar {
+        display: flex;
+        gap: 10px;
+    }
+    
+    .search-bar input {
+        padding: 5px;
+        border: none;
+        border-radius: 4px;
+    }
+    
+    .search-bar button {
+        padding: 5px 10px;
+        border: none;
+        background-color: #4682b4;
+        color: #ffffff;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+    
+    .search-bar button:hover {
+        background-color: #315f72;
+    }
+    
+    .menu-toggle {
+        display: none;
+        font-size: 24px;
+        cursor: pointer;
+        color: #ffffff;
+    }
+    
+    /* Content styles */
+    .content {
+        padding: 20px;
+    }
+    
+    /* Blockchain info styles */
+    .blockchain-info {
+        max-width: 800px;
+        margin: 20px auto;
+        padding: 20px;
+        border-radius: 8px;
+        background-color: aqua; /* Light blue background */
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        text-align: center;
+    }
+    
+    /* Modern registration form styles */
+    .registration-container {
+        max-width: 400px;
+        margin: 40px auto;
+        background-color: aqua;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        padding-LEFT: 10PX;
+    }
+    
+    .registration-form {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .input-group {
+        margin-bottom: 15px;
+        position: relative;
+    }
+    
+    .input-group input {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        outline: none;
+        transition: border 0.3s;
+        font-size: 14px;
+    }
+    
+    .input-group input:focus {
+        border-color: #00796b;
+        box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+    }
+    
+    .input-group label {
+        position: absolute;
+        left: 12px;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: #ffffff;
+        padding: 0 5px;
+        font-size: 12px;
+        color: #888;
+        transition: 0.2s;
+        pointer-events: none;
+    }
+    
+    .input-group input:focus + label,
+    .input-group input:not(:placeholder-shown) + label {
+        top: -10px;
+        font-size: 10px;
+        color: #00796b;
+    }
+    
+    .btn {
+        padding: 12px;
+        background-color: #00796b;
+        border: none;
+        border-radius: 5px;
+        color: #fff;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s, transform 0.3s;
+    }
+    
+    .btn:hover {
+        background-color: #004d40;
+        transform: translateY(-2px);
+    }
+    
+    
+    @media (max-width: 768px) {
+        .nav-links {
+            display: none;
+            flex-direction: column;
+            position: absolute;
+            top: 60px;
+            right: 0;
+            background-color: #87ceeb;
+            width: 200px;
+            border-radius: 0 0 10px 10px;
+        }
+    
+        .nav-links.active {
+            display: flex;
+        }
+    
+        .menu-toggle {
+            display: block;
+        }
+    }
+    ./* Footer styling */
+    .footer {
+        background-color: #333;
+        color: #fff;
+        padding: 20px;
+        text-align: center;
+        font-size: 14px;
+        position: relative;
+        bottom: 0;
+        width: 100%;
+    }
+    
+    .footer-content {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    
+    .footer a {
+        color: #fff;
+        text-decoration: none;
+        margin: 0 10px;
+    }
+    
+    .footer a:hover {
+        text-decoration: underline;
+    }
+    
+    .footer .social-media {
+        margin: 10px 0;
+    }
+    
+    .footer .social-media a {
+        margin: 0 10px;
+        font-size: 18px;
+        display: inline-block;
+    }
+    
+    .footer .social-media a:hover {
+        color: #007bff;
+    }
+    
+    .footer .footer-links {
+        margin-top: 10px;
+    }
+    
+    .footer .footer-links a {
+        margin: 0 10px;
+    }</style>
+
+    <nav class="navbar">
+     
+    
+        <div class="logo"><p>Blockchain Voting System<p></div>
+        
+        <ul class="nav-links">
+        
+            <li><a href="index.html" class="nav-item" onclick="setActive(this)">Home</a></li>
+            <li><a href="s.html" class="nav-item" onclick="setActive(this)">Login</a></li>
+            <li><a href="page5.html" class="nav-item" onclick="setActive(this)">Voting Rules</a></li>
+            <li><a href="page4.html" class="nav-item" onclick="setActive(this)">Election Dates</a></li>
+        </ul>
+        <div class="search-bar">
+            <input type="text" placeholder="Type here..." id="search-input">
+            <button onclick="searchFunction()">Search</button>
+        </div>
+        <div class="menu-toggle" onclick="toggleMenu()">&#9776;</div>
+    </nav>
+
+   <PRE><H2><B>Here’s a concise summary of terms and conditions for a blockchain voting system:
+
+    Terms and Conditions for Blockchain Voting
+    
+    1. **Acceptance**
+       - **Agreement**: By participating in the voting process, you agree to comply with these terms and conditions
+    
+    2. **Eligibility**
+       - **Voter Requirements**: Must meet eligibility criteria (e.g., age, residency) and provide valid identification for 
+       verification
+    
+    3. **Voting Process**
+       - **Cast Your Vote**: Votes must be cast according to provided instructions within the specified voting period
+       - **Anonymity**: Votes are confidential and encrypted to ensure privacy
+    
+    4. **Data Security**
+       - **Protection**: Personal and voting data is securely stored and encrypted on the blockchain
+       - **Access**: Only authorized personnel have access to sensitive data
+    
+    5. **Integrity and Accuracy**
+       - **Immutable Records**: Once recorded, votes cannot be altered or deleted
+       - **Accuracy**: Ensure your vote is cast correctly before submission
+    
+    6. **Responsibilities**
+       - **Account Security**: You are responsible for maintaining the security of your voting account and credentials
+       - **Compliance**: Must follow all rules and guidelines provided for voting
+    
+    7. **Dispute Resolution**
+       - **Process**: Disputes related to the voting process will be handled according to outlined procedures
+    
+    8. **Liability**
+       - **Limitations**: The system provider is not liable for any issues arising from incorrect votes or unauthorized access due to user negligence
+    
+    9. **Changes and Updates**
+       - **Modifications**: Terms and conditions may be updated; continued use implies acceptance of changes
+    
+    10. **Contact Information**
+        - **Support**: Contact details are provided for assistance with any questions or issues related to voting
+    
+    These terms ensure clarity on voter responsibilities, data handling, and the voting process.</B></H2></PRE> 
+    <footer class="footer"></footer>
+    <p>&copy; 2024 Blockchain voting System. All rights reserved.</p>
